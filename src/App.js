@@ -1,26 +1,60 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {
+  Component
+} from 'react';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
+  state = {
+    inputText: '',
+    pokemon: '',
+  };
+
+  onChange = (e) => this.setState({
+    [e.target.name]: e.target.value
+  });
+
+  getPokemon = async () => {
+    const {
+      inputText
+    } = this.state;
+      const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${inputText}`, {
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+      }
+    });
+    console.log(res);
+
+    this.setState({
+      pokemon: res
+    });
+  }
+
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+    const {
+      inputText
+    } = this.state;
+
+    return ( <
+      div className = "text-center text-uppercase text-info" >
+      <
+      h1 > Patka < /h1> <
+      div className = "search" >
+      <
+      input type = "text"
+      name = "inputText"
+      value = {
+        inputText
+      }
+      onChange = {
+        this.onChange
+      }
+      /> <
+      button onClick = {
+        this.getPokemon
+      } > search < /button> <
+      /div> <
+      /div>
     );
   }
 }
