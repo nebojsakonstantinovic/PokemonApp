@@ -2,7 +2,6 @@ import React from 'react';
 
 
 const PokemonData = ( {pokemonData} ) => {
-  console.log(pokemonData);
   return (
     <div className="card Pokemon-card mx-auto">
       <div className="card-header">
