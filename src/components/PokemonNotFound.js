@@ -1,11 +1,10 @@
 import React from 'react';
 
-const PokemonNotFound = ( { name, color, clicked } ) => {
+const PokemonNotFound = ( { name, clicked } ) => {
   return (
     <div className="text-center">
-      {name && <div>There is no pokemon with name or name id {name}</div>}     
-      {color && <div>There is no pokemon with color name or color id {color}</div>}
-      <button className="btn btn-success mt-3" onClick={clicked}>
+      {name && <div>There is no pokemon with name or color {name}</div>}     
+      <button className="btn btn-primary mt-3" onClick={clicked}>
         click to continue search
       </button>
     </div>

@@ -6,7 +6,7 @@ const PokemonData = ( {pokemonData} ) => {
     <div className="card Pokemon-card mx-auto">
       <div className="card-header">
         <div className="row">
-          <div className="col-12 col-sm-3 text-center">{pokemonData.sprites && <img src={pokemonData.sprites.back_default} alt="pokemon"/>}</div>
+          <div className="col-12 col-sm-3 text-center">{pokemonData.sprites && <img src={pokemonData.sprites.back_default} alt="pokemon img"/>}</div>
           <div className="col-12 col-sm-9 d-flex justify-content-center align-items-center">Hi I am POKEMON</div>
         </div>
       </div>

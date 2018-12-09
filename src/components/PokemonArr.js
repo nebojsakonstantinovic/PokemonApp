@@ -28,6 +28,8 @@ import React, { Component } from 'react'
     const colorStyle = {
       color: pokemonArr.name,
       borderRadius: '5px',
+      paddingLeft: '5px',
+      paddingRight: '5px',
     };
 
     return (
@@ -40,10 +42,10 @@ import React, { Component } from 'react'
         <div className="text-center mb-2">Click on pokemon in the list for more details</div>
         <ul className="list-unstyled list-group">
           {sort && arrOfPokemonName && arrOfPokemonName.sort().map( (el,i) => (
-            <li className="list-group-item cursor-pointer" onClick={clicked} key={i}>{el}</li>
+            <li className="list-group-item cursor-pointer pokemon-list-item" onClick={clicked} key={i}>{el}</li>
           ))}
           {!sort && arrOfPokemonName && arrOfPokemonName.map( (el,i) => (
-            <li className="list-group-item cursor-pointer" onClick={clicked}  key={i}>{el}</li>
+            <li className="list-group-item cursor-pointer pokemon-list-item" onClick={clicked}  key={i}>{el}</li>
           ))}
         </ul>
       </div>

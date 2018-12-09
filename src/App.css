@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 
-.cursor-pointer:hover {
+.pokemon-list-item:hover {
   background-color: #ccc;
   color: #fff;
 }
