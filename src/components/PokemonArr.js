@@ -18,25 +18,32 @@ import React, { Component } from 'react'
   }
 
   render() {
+    const { pokemonArr } = this.props;
     const { sort } = this.state;
     let arrOfPokemonName;
-    if (this.props.pokemonArr.pokemon_species !== undefined) {
-        arrOfPokemonName = this.props.pokemonArr.pokemon_species.map( (e) => {
+    if (pokemonArr.pokemon_species !== undefined) {
+        arrOfPokemonName = pokemonArr.pokemon_species.map( (e) => {
         return e.name;
       })
-      console.log(arrOfPokemonName);
     }
+
+    const colorStyle = {
+      color: pokemonArr.name,
+    };
 
     return (
       <div>
-        <button onClick={this.setSortToTrue}>sort on</button>
-        <button onClick={this.setSortToFalse}>sort off</button>
-        <ul>
+        <h2 className="text-center">Pokemons with color <span className="text-uppercase" style={colorStyle}>{pokemonArr.name}</span></h2>
+        <div className="text-center mb-2">
+          <button className="btn btn-success mr-1" onClick={this.setSortToTrue}>sort on</button>
+          <button className="btn btn-danger" onClick={this.setSortToFalse}>sort off</button>
+        </div>
+        <ul className="list-unstyled list-group">
           {sort && arrOfPokemonName && arrOfPokemonName.sort().map( (el,i) => (
-            <li key={i}>{el}</li>
+            <li className="list-group-item" key={i}>{el}</li>
           ))}
           {!sort && arrOfPokemonName && arrOfPokemonName.map( (el,i) => (
-            <li key={i}>{el}</li>
+            <li className="list-group-item"  key={i}>{el}</li>
           ))}
         </ul>
       </div>

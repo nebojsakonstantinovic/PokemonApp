@@ -1,4 +1,33 @@
 .Pokemon-card {
-  border: 1px solid red;
-  margin-top: 50px;
+  width: 100%;
+}
+
+@media(min-width:400px){
+  .Pokemon-card {
+    width: 80%;
+  }
+}
+
+@media(min-width:576px){
+  .Pokemon-card {
+    width: 70%;
+  }
+}
+  
+@media(min-width:768px){
+  .Pokemon-card {
+    width: 60%;
+  }
+}
+  
+@media(min-width:992px){
+  .Pokemon-card {
+    width: 50%;
+  }
+}  
+
+@media(min-width:1200px){
+  .Pokemon-card {
+    width: 40%;
+  }
 }
